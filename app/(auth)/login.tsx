@@ -25,7 +25,7 @@ export default function LoginScreen() {
     try {
       setIsLoading(true);
       await login(values.email, values.password, values.role);
-      router.replace("/(app)");
+      router.replace("/(app)/dashboard");
     } catch (error) {
       console.error("Login error:", error);
     } finally {

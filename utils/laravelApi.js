@@ -1,9 +1,11 @@
 function laravelApi() {
     // const baseUrl = 'http://localhost/machinan-backend/public/api';
-    const baseUrl = 'http://127.0.0.1:8000/api';
+    // const baseUrl = 'http://127.0.0.1:8000/api';
+    const baseUrl = 'http://localhost:3000';
     // const baseUrl = "https://machinrun.islapps.tech/backend/public/api";
   
-    const home = `${baseUrl}/admin`;
+    // const home = `${baseUrl}/admin`;
+    const home = `http://localhost:3000`;
   
     return {
       home,

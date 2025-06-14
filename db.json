@@ -1,0 +1,80 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "john@example.com",
+      "password": "password123",
+      "role": "student",
+      "createdAt": "2024-03-20T10:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "email": "jane@example.com",
+      "password": "password123",
+      "role": "teacher",
+      "createdAt": "2024-03-20T10:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "name": "Mike Johnson",
+      "email": "mike@example.com",
+      "password": "password123",
+      "role": "parent",
+      "createdAt": "2024-03-20T10:00:00.000Z"
+    }
+  ],
+  "courses": [
+    {
+      "id": "1",
+      "title": "Mathematics 101",
+      "teacher": "Jane Smith",
+      "progress": 75,
+      "nextClass": "2024-03-25T10:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "title": "Physics Fundamentals",
+      "teacher": "Jane Smith",
+      "progress": 60,
+      "nextClass": "2024-03-26T14:00:00.000Z"
+    }
+  ],
+  "assignments": [
+    {
+      "id": "1",
+      "title": "Algebra Problem Set",
+      "course": "Mathematics 101",
+      "type": "homework",
+      "status": "pending",
+      "dueDate": "2024-03-28T23:59:59.000Z"
+    },
+    {
+      "id": "2",
+      "title": "Physics Lab Report",
+      "course": "Physics Fundamentals",
+      "type": "lab",
+      "status": "submitted",
+      "dueDate": "2024-03-30T23:59:59.000Z"
+    }
+  ],
+  "classes": [
+    {
+      "id": "1",
+      "title": "Mathematics 101",
+      "teacher": "Jane Smith",
+      "students": 24,
+      "schedule": "Mon, Wed, Fri 10:00 AM",
+      "room": "Room 101"
+    },
+    {
+      "id": "2",
+      "title": "Physics Fundamentals",
+      "teacher": "Jane Smith",
+      "students": 20,
+      "schedule": "Tue, Thu 2:00 PM",
+      "room": "Lab 203"
+    }
+  ]
+} 
