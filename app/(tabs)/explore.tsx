@@ -1,96 +1,73 @@
 import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import { StyleSheet, TouchableOpacity } from 'react-native';
 
 import { Collapsible } from '@/components/Collapsible';
-import { ExternalLink } from '@/components/ExternalLink';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { IconSymbol } from '@/components/ui/IconSymbol';
 
-export default function TabTwoScreen() {
+export default function ExploreScreen() {
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
       headerImage={
-        <IconSymbol
-          size={310}
-          color="#808080"
-          name="chevron.left.forwardslash.chevron.right"
+        <Image
+          source={require('@/assets/images/School-cover-image.jpg')}
           style={styles.headerImage}
         />
       }>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Explore</ThemedText>
+        <ThemedText type="title">Latest Updates</ThemedText>
       </ThemedView>
-      <ThemedText>This app includes example code to help you get started.</ThemedText>
-      <Collapsible title="File-based routing">
-        <ThemedText>
-          This app has two screens:{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/explore.tsx</ThemedText>
+
+      <Collapsible title="A Visit From Faroe Islands">
+        <ThemedText style={styles.date}>21 Mar 2016</ThemedText>
+        <ThemedText style={styles.articleText}>
+          Finally, after a long time of planning, Hilda Videro, a board member of Children's Aid Faroe Islands, landed at Allama Iqbal International Airport in Lahore...
         </ThemedText>
-        <ThemedText>
-          The layout file in <ThemedText type="defaultSemiBold">app/(tabs)/_layout.tsx</ThemedText>{' '}
-          sets up the tab navigator.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/router/introduction">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
+        <TouchableOpacity style={styles.readMoreButton}>
+          <ThemedText style={styles.readMoreText}>Read More</ThemedText>
+        </TouchableOpacity>
       </Collapsible>
-      <Collapsible title="Android, iOS, and web support">
-        <ThemedText>
-          You can open this project on Android, iOS, and the web. To open the web version, press{' '}
-          <ThemedText type="defaultSemiBold">w</ThemedText> in the terminal running this project.
+
+      <Collapsible title="New Dormitory for Girls in Machike Boarding School">
+        <ThemedText style={styles.date}>21 Feb 2016</ThemedText>
+        <ThemedText style={styles.articleText}>
+          ABC Pakistan started dormitories by renting homes and small buildings located near to the schools. Having these facilities, located at distance from each other, posed...
         </ThemedText>
+        <TouchableOpacity style={styles.readMoreButton}>
+          <ThemedText style={styles.readMoreText}>Read More</ThemedText>
+        </TouchableOpacity>
       </Collapsible>
-      <Collapsible title="Images">
-        <ThemedText>
-          For static images, you can use the <ThemedText type="defaultSemiBold">@2x</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">@3x</ThemedText> suffixes to provide files for
-          different screen densities
+
+      <Collapsible title="Komal, Danish & Nadeem Need Special Assistance">
+        <ThemedText style={styles.date}>20 Dec 2015</ThemedText>
+        <ThemedText style={styles.articleText}>
+          A plea for help: Nadeem & his wife, having worked on brick kilns all their lives, struggling to clear one debt after another, always find themselves under new loans...
         </ThemedText>
-        <Image source={require('@/assets/images/react-logo.png')} style={{ alignSelf: 'center' }} />
-        <ExternalLink href="https://reactnative.dev/docs/images">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
+        <TouchableOpacity style={styles.readMoreButton}>
+          <ThemedText style={styles.readMoreText}>Read More</ThemedText>
+        </TouchableOpacity>
       </Collapsible>
-      <Collapsible title="Custom fonts">
-        <ThemedText>
-          Open <ThemedText type="defaultSemiBold">app/_layout.tsx</ThemedText> to see how to load{' '}
-          <ThemedText style={{ fontFamily: 'SpaceMono' }}>
-            custom fonts such as this one.
-          </ThemedText>
+
+      <Collapsible title="Neha Sadiq's Journey to Education">
+        <ThemedText style={styles.date}>20 Dec 2015</ThemedText>
+        <ThemedText style={styles.articleText}>
+          Neha Sadiq, the youngest of six siblings, still carries a great interest in receiving formal education after having to drop out of school due to...
         </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/versions/latest/sdk/font">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
+        <TouchableOpacity style={styles.readMoreButton}>
+          <ThemedText style={styles.readMoreText}>Read More</ThemedText>
+        </TouchableOpacity>
       </Collapsible>
-      <Collapsible title="Light and dark mode components">
-        <ThemedText>
-          This template has light and dark mode support. The{' '}
-          <ThemedText type="defaultSemiBold">useColorScheme()</ThemedText> hook lets you inspect
-          what the user&apos;s current color scheme is, and so you can adjust UI colors accordingly.
+
+      <Collapsible title="Construction Work in Peshawar School">
+        <ThemedText style={styles.date}>05 Nov 2015</ThemedText>
+        <ThemedText style={styles.articleText}>
+          Due to tireless efforts of Stephen John, Maxwell Ditta and the management of ABC Pakistan, Peshawar school received another gift of two classrooms...
         </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Animations">
-        <ThemedText>
-          This template includes an example of an animated component. The{' '}
-          <ThemedText type="defaultSemiBold">components/HelloWave.tsx</ThemedText> component uses
-          the powerful <ThemedText type="defaultSemiBold">react-native-reanimated</ThemedText>{' '}
-          library to create a waving hand animation.
-        </ThemedText>
-        {Platform.select({
-          ios: (
-            <ThemedText>
-              The <ThemedText type="defaultSemiBold">components/ParallaxScrollView.tsx</ThemedText>{' '}
-              component provides a parallax effect for the header image.
-            </ThemedText>
-          ),
-        })}
+        <TouchableOpacity style={styles.readMoreButton}>
+          <ThemedText style={styles.readMoreText}>Read More</ThemedText>
+        </TouchableOpacity>
       </Collapsible>
     </ParallaxScrollView>
   );
@@ -98,13 +75,36 @@ export default function TabTwoScreen() {
 
 const styles = StyleSheet.create({
   headerImage: {
-    color: '#808080',
-    bottom: -90,
-    left: -35,
+    width: '100%',
+    height: '100%',
     position: 'absolute',
+    resizeMode: 'cover',
   },
   titleContainer: {
     flexDirection: 'row',
     gap: 8,
+    marginBottom: 16,
+  },
+  date: {
+    fontSize: 14,
+    color: '#666',
+    marginBottom: 8,
+  },
+  articleText: {
+    fontSize: 16,
+    lineHeight: 24,
+    marginBottom: 12,
+  },
+  readMoreButton: {
+    backgroundColor: '#4c669f',
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    borderRadius: 4,
+    alignSelf: 'flex-start',
+  },
+  readMoreText: {
+    color: '#ffffff',
+    fontSize: 14,
+    fontWeight: '600',
   },
 });

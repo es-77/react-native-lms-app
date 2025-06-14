@@ -58,20 +58,6 @@ export default function ForgotPasswordScreen() {
 
       <View className="flex-1 p-6">
         <View className="flex-1 justify-center">
-          <View className="items-center mb-8">
-            <View className="w-20 h-20 bg-blue-50 rounded-full items-center justify-center mb-4 shadow-lg">
-              <Text className="text-3xl font-bold text-blue-600">
-                Emmanuel saleem
-              </Text>
-            </View>
-            <Text className="text-4xl font-bold text-black mb-2">
-              Forgot Password
-            </Text>
-            <Text className="text-black/80 text-center text-base">
-              Enter your email and role to reset your password
-            </Text>
-          </View>
-
           {!isEmailSent ? (
             <View className="bg-white rounded-2xl p-6 shadow-xl border border-gray-100">
               <Formik
