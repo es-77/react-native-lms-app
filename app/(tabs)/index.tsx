@@ -1,5 +1,6 @@
 import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import { Link } from 'expo-router';
+import { Platform, StyleSheet, TouchableOpacity } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
@@ -20,6 +21,20 @@ export default function HomeScreen() {
         <ThemedText type="title">Welcome!</ThemedText>
         <HelloWave />
       </ThemedView>
+
+      <ThemedView style={styles.authContainer}>
+        <Link href="/(auth)/login" asChild>
+          <TouchableOpacity style={styles.authButton}>
+            <ThemedText style={styles.authButtonText}>Sign In</ThemedText>
+          </TouchableOpacity>
+        </Link>
+        <Link href="/(auth)/register" asChild>
+          <TouchableOpacity style={[styles.authButton, styles.registerButton]}>
+            <ThemedText style={styles.authButtonText}>Create Account</ThemedText>
+          </TouchableOpacity>
+        </Link>
+      </ThemedView>
+
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 1: Try it</ThemedText>
         <ThemedText>
@@ -71,5 +86,32 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     position: 'absolute',
+  },
+  authContainer: {
+    marginVertical: 20,
+    gap: 12,
+  },
+  authButton: {
+    backgroundColor: '#4c669f',
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderRadius: 8,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  registerButton: {
+    backgroundColor: '#3b5998',
+  },
+  authButtonText: {
+    color: '#ffffff',
+    fontSize: 16,
+    fontWeight: '600',
   },
 });

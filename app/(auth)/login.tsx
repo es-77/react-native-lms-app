@@ -90,23 +90,23 @@ export default function LoginScreen() {
                 />
 
                 <TouchableOpacity className="self-end mt-2">
-                  <Text className="text-white/80">Forgot Password?</Text>
+                  <Text className="text-blue-600">Forgot Password?</Text>
                 </TouchableOpacity>
 
                 <Button
                   title="Sign In"
                   onPress={() => handleSubmit()}
                   isLoading={isLoading}
-                  className="mt-6 bg-white"
+                  className="mt-6 bg-blue-600"
                 />
 
                 <View className="flex-row justify-center mt-6">
-                  <Text className="text-white/80">
+                  <Text className="text-blue-600">
                     Do not have an account?{" "}
                   </Text>
                   <Link href="/(auth)/register" asChild>
                     <TouchableOpacity>
-                      <Text className="text-white font-semibold">Sign Up</Text>
+                      <Text className="text-blue-600 font-semibold">Sign Up</Text>
                     </TouchableOpacity>
                   </Link>
                 </View>
