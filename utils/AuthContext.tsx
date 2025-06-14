@@ -1,8 +1,8 @@
 import React, { createContext, useContext, useState } from 'react';
-import { AuthState, User } from './types';
+import { AuthState, User, UserRole } from './types';
 
 interface AuthContextType extends AuthState {
-  login: (email: string, password: string) => Promise<void>;
+  login: (email: string, password: string, role: UserRole) => Promise<void>;
   register: (email: string, password: string, name: string, role: User['role']) => Promise<void>;
   logout: () => Promise<void>;
 }
@@ -17,7 +17,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   });
 
   // Mock login function - Replace with actual Firebase implementation
-  const login = async (email: string, password: string) => {
+  const login = async (email: string, password: string, role: UserRole) => {
     try {
       setState(prev => ({ ...prev, isLoading: true, error: null }));
       // TODO: Implement Firebase authentication
@@ -26,7 +26,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         id: '1',
         name: 'Test User',
         email,
-        role: 'student',
+        role,
         createdAt: new Date().toISOString(),
       };
       setState({ user: mockUser, isLoading: false, error: null });
