@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "HelloWorld",
-    "slug": "HelloWorld",
+    "name": "Farooqabad School",
+    "slug": "farooqabad-school",
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
@@ -9,17 +9,25 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.farooqabadschool.app"
     },
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.farooqabadschool.app",
+      "versionCode": 1
     },
     "plugins": [
       "expo-router"
     ],
-    "scheme": "helloworld",
-    "jsEngine": "hermes"
+    "scheme": "farooqabad-school",
+    "jsEngine": "hermes",
+    "extra": {
+      "eas": {
+        "projectId": "a630b0b9-0589-4ab3-bb85-d5d70d043eea"
+      }
+    }
   }
 }
